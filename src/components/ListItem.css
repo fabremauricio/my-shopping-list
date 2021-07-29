@@ -41,6 +41,7 @@
 .title {
     color: #232d2e;
     font-weight: 600;
+    font-size: 16px !important;
 }
 
 .subtitle {

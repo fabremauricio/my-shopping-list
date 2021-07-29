@@ -4,6 +4,7 @@ import './ListItem.css';
 export default function ListItem({
   title = "Title",
   subtitle = "Subtitile 12313",
+  onLongPress = () => {}
 }) {
   return (
     <div className="item-wrapper">

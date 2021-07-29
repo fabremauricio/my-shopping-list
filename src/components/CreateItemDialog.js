@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Dialog from "./Dialog";
 import Button from "./Button";
 import TextInput from "./TextInput";
 
-export default function CreateItemDialog({ onClose, visible = true }) {
+export default function CreateItemDialog({
+  visible = true,
+  onClose = () => {},
+  onCreate = () => {},
+}) {
+  const [title, setTitle] = useState("");
+  const [subtitle, setSubtitle] = useState("");
+
+  function createItem() {
+    if (title && subtitle) {
+      onCreate({
+        title,
+        subtitle,
+        id: Math.random(),
+      });
+      setTitle('');
+      setSubtitle('');
+      onClose();
+    }
+  }
+
   return (
     <Dialog
       visible={visible}
@@ -12,8 +32,9 @@ export default function CreateItemDialog({ onClose, visible = true }) {
       content={
         <>
           <div className="title">Add item to the list</div>
-          <TextInput />
-          <Button text="ADD" />
+          <TextInput label="Title" value={title} onChange={setTitle} />
+          <TextInput label="Subtitle" value={subtitle} onChange={setSubtitle} />
+          <Button text="ADD" onClick={createItem} />
         </>
       }
     />

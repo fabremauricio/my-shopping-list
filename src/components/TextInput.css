@@ -25,7 +25,8 @@ input:focus {
 
 label {
   transition: all 0.1s ease-in;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
   color: #232d2e;
   opacity: 0.75;
 }
