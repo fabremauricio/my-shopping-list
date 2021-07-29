@@ -1,0 +1,14 @@
+.create-item-wrapper {
+    min-height: 48px;
+    display: flex;
+    background: #28C2FF22;
+    border-radius: 6px;
+    border: 1px solid #28C2FF;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.create-item-wrapper span {
+    color: #28C2FF; 
+    font-weight: 600;
+}
