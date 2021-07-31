@@ -11,6 +11,15 @@ button {
   user-select: none;
   letter-spacing: 1px;
   height: 42px;
+  margin-top: 8px;
+}
+
+
+.button__delete {
+  border: 1px solid #D64933;
+  background: #D6493311;
+  color: #D64933;
+  font-weight: 500;
 }
 
 button:active {

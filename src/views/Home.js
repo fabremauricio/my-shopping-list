@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import logo from "../resources/shopping-cart.png";
-import Dialog from "../components/Dialog";
-import Button from "../components/Button";
+
 import ListItem from "../components/ListItem";
 import CreateItemDialog from "../components/CreateItemDialog";
 import CreateItemButton from "../components/CreateItemButton";
 
-const ITEMS_KEY = 'items';
+import { v4 as uuid } from "uuid";
+
+const ITEMS_KEY = "items";
 
 export default function Home() {
   const [dialog, setDialog] = useState(false);
@@ -24,6 +24,16 @@ export default function Home() {
     localStorage.setItem(ITEMS_KEY, data);
   }, [items]);
 
+  function deleteItem(id) {
+    console.log(`Delete called ${id}`);
+    setItems((ls) => ls.filter((e) => e.id !== id));
+  }
+
+  function createItem({ title, subtitle }) {
+    const item = { title, subtitle, id: uuid() };
+    setItems((ls) => [...ls, item]);
+  }
+
   return (
     <div className="page-wrapper">
       <div className="page-header">
@@ -32,13 +42,18 @@ export default function Home() {
       </div>
       <div className="list-preview__wrapper">
         {items.map((e) => (
-          <ListItem key={e.id} title={e.title} subtitle={e.subtitle} />
+          <ListItem
+            key={e.id}
+            title={e.title}
+            subtitle={e.subtitle}
+            onDelete={() => deleteItem(e.id)}
+          />
         ))}
         <CreateItemButton onClick={() => setDialog(true)} />
         <CreateItemDialog
           visible={dialog}
           onClose={() => setDialog(false)}
-          onCreate={(e) => setItems((ls) => [...ls, e])}
+          onCreate={(e) => createItem(e)}
         />
       </div>
     </div>

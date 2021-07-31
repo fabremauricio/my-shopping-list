@@ -16,8 +16,7 @@ export default function CreateItemDialog({
     if (title && subtitle) {
       onCreate({
         title,
-        subtitle,
-        id: Math.random(),
+        subtitle
       });
       setTitle('');
       setSubtitle('');
