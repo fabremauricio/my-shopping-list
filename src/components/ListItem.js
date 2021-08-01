@@ -3,11 +3,7 @@ import "./ListItem.css";
 
 import DeleteItemDialog from "./DeleteItemDialog";
 
-export default function ListItem({
-  title = "Title",
-  subtitle = "Subtitile 12313",
-  onDelete = () => {},
-}) {
+export default function ListItem({ id, title, subtitle }) {
   const [dialog, setDialog] = useState(false);
 
   return (
@@ -34,9 +30,9 @@ export default function ListItem({
       </div>
       <DeleteItemDialog
         visible={dialog}
+        id={id}
         onClose={() => setDialog(false)}
-        onDelete={() => onDelete()}
-      /> 
+      />
     </>
   );
 }

@@ -3,11 +3,21 @@ import React from "react";
 import Dialog from "./Dialog";
 import Button from "./Button";
 
+import { ActionCreators } from "../redux/actions";
+import { useDispatch } from "react-redux";
+
 export default function CreateItemDialog({
+  id,
   visible = true,
   onClose = () => {},
-  onDelete = () => {},
 }) {
+  const dispatch = useDispatch();
+
+  function deleteItem() {
+    dispatch(ActionCreators.DeleteItem(id));
+    onClose();
+  }
+
   return (
     <Dialog
       visible={visible}
@@ -15,14 +25,7 @@ export default function CreateItemDialog({
       content={
         <>
           <div className="title">Do you want to delete this item?</div>
-          <Button
-            text="DELETE"
-            isDelete={true}
-            onClick={() => {
-              onDelete();
-              onClose();
-            }}
-          />
+          <Button text="DELETE" isDelete={true} onClick={deleteItem} />
         </>
       }
     />

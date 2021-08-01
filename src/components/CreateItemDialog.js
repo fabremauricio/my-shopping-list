@@ -4,22 +4,27 @@ import Dialog from "./Dialog";
 import Button from "./Button";
 import TextInput from "./TextInput";
 
+import { useDispatch } from "react-redux";
+import { ActionCreators } from "../redux/actions";
+
 export default function CreateItemDialog({
   visible = true,
   onClose = () => {},
-  onCreate = () => {},
 }) {
+  const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
 
   function createItem() {
     if (title && subtitle) {
-      onCreate({
-        title,
-        subtitle
-      });
-      setTitle('');
-      setSubtitle('');
+      dispatch(
+        ActionCreators.CreateItem(
+          title,
+          subtitle,
+        )
+      );
+      setTitle("");
+      setSubtitle("");
       onClose();
     }
   }
