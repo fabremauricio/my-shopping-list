@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import Dialog from "./Dialog";
-import Button from "./Button";
-import TextInput from "./TextInput";
+import Dialog from "../../../ui-components/dialog";
+import Button from "../../../ui-components/button";
+import TextInput from "../../../ui-components/text-input";
 
 import { useDispatch } from "react-redux";
-import { ActionCreators } from "../redux/actions";
+import { ActionCreators } from "../../../redux/actions";
 
 export default function CreateItemDialog({
   visible = true,

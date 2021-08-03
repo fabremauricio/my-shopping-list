@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./Home.css";
+import "./styles.css";
 
 import { useSelector } from "react-redux";
 
-import ListItem from "../components/ListItem";
-import CreateItemDialog from "../components/CreateItemDialog";
-import CreateItemButton from "../components/CreateItemButton";
+import ListItem from "./list-item";
+import CreateItemDialog from "./create-item-dialog";
+import CreateItemButton from "./create-item-button";
 
 export default function Home() {
   const items = useSelector((state) => state.items);

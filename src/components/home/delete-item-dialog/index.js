@@ -1,9 +1,9 @@
 import React from "react";
 
-import Dialog from "./Dialog";
-import Button from "./Button";
+import Dialog from "./../../../ui-components/dialog";
+import Button from "./../../../ui-components/button";
 
-import { ActionCreators } from "../redux/actions";
+import { ActionCreators } from "../../../redux/actions";
 import { useDispatch } from "react-redux";
 
 export default function CreateItemDialog({

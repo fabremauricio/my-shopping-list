@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./ListItem.css";
+import "./styles.css";
 
-import DeleteItemDialog from "./DeleteItemDialog";
+import DeleteItemDialog from "./../delete-item-dialog";
 
 export default function ListItem({ id, title, subtitle }) {
   const [dialog, setDialog] = useState(false);

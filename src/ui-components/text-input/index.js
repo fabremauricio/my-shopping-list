@@ -1,5 +1,5 @@
 import React from "react";
-import "./TextInput.css";
+import "./styles.css";
 
 export default function TextInput({
   type = "text",
@@ -9,7 +9,11 @@ export default function TextInput({
 }) {
   return (
     <div className="input-wrapper">
-      <input type={type} value={value} onChange={e => onChange(e.target.value)}></input>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      ></input>
       <label>{label}</label>
     </div>
   );
