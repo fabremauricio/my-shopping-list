@@ -1,6 +1,10 @@
 # My Shopping List
 
+__UNDER DEVELOPMENT : )__
+
 A shopping list app created with React.js and PWA technologies.
+
+![preview](doc/preview.png "Preview")
 
 ## Introduction
 
