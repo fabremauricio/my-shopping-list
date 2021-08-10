@@ -11,6 +11,15 @@ const dev = {
   },
   target: "web",
   devtool: "eval-source-map",
+  module: {
+    rules: [
+      {
+        use: ["style-loader", "css-loader"],
+        test: /.(css)$/,
+        exclude: /node_modules/,
+      },
+    ],
+  },
 };
 
 module.exports = merge(common, dev);
