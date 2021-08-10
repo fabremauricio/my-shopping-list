@@ -7,11 +7,10 @@ const path = require("path");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "../dist"),
     filename: "[name].[contenthash].js",
     publicPath: "",
   },
-  mode: "production",
   module: {
     rules: [
       {
@@ -20,10 +19,10 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        use: ['style-loader','css-loader'],
+        use: ["style-loader", "css-loader"],
         test: /.(css)$/,
         exclude: /node_modules/,
-      }
+      },
     ],
   },
   resolve: {
@@ -32,7 +31,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./public/index.html"
-    })
-  ]
+      template: "./public/index.html",
+    }),
+  ],
 };
