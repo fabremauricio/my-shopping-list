@@ -10,6 +10,7 @@ const dev = {
     contentBase: "../dist",
   },
   target: "web",
+  devtool: "eval-source-map",
 };
 
 module.exports = merge(common, dev);
