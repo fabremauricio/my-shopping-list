@@ -10,6 +10,13 @@ A shopping list app created with React.js and PWA technologies.
 
 The purpose behind this project was to learn the core concepts of React and release a simple yet usable PWA
 
+## Development
+
+To run the app in development mode run
+``` 
+npm run start 
+```
+
 ## Goals
 
 Learn and interact with the following web development aspects
